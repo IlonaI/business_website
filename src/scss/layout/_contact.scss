@@ -1,0 +1,125 @@
+.contact {
+	@include clearfix();
+	padding-top: em(70px);
+	padding-bottom: em(50px);
+	background-color: $pickledBluewood;
+
+	&__item {
+		float: left;
+		width: 23%;
+		padding-left: 2%;
+	}
+
+	&--padding-left { padding-left: 0; }
+
+	&__title {
+		font-size: em(22px);
+		font-weight: 400;
+		color: $white;
+		&--font { font-family: $logo-font-family; }
+	}
+
+	&__paragraph {
+		font-size: em(14px);
+		line-height: 1.2;
+		color: $osloGray;
+
+		&--twitter {
+			position: relative;
+			margin-left: 25px;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: -25px;
+				content: '\f099';
+				font: normal normal normal 14px/1 FontAwesome;
+				color: $viking;
+			}
+		}
+
+		&--color {
+			display: block;
+			margin-top: 3px;
+			color: darken($viking, 10%);
+		}	
+	}
+
+	&__details { margin-top: 5px; }
+
+	&__detail {
+		display: inline-block;
+		font-size: em(14px);
+		line-height: 1.2;
+		color: $white;
+	}
+
+	&__fa {
+		display: inline-block;
+		width: 15px;
+		margin-right: 15px;
+		color: $viking;
+	}
+}
+
+
+.form {
+	margin-top: 35px;
+	font-size: em(13px);
+
+	&__input {
+		width: 70%;
+		height: 34px;
+		padding: 0 0 0 20px;
+		background-color: $mirage;
+		border: none;
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		outline: none;
+	}
+
+	&__button {
+		width: 25%;
+		height: 33px;
+		padding: 0;
+		color: $white;
+		background-color: $viking;
+		border: none;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		outline: none;
+		transform: translateX(-5px);
+		cursor: pointer;
+		&:hover {
+			background-color: darken($viking, 10%);
+		}
+	}
+}
+
+// media queries
+
+@media (max-width: 60em) {
+	.contact {
+		margin-right: -35px;
+		padding-top: 0;
+
+		&__item {
+			width: 50%;
+			padding-top: 4%;
+			padding-right: 4%;
+			padding-left: 0;
+		}
+	}
+}
+
+@media (max-width: 43em) {
+
+	.contact {
+		margin-right: 0;
+		
+		&__item {
+			float: none;
+			width: 100%;
+		}
+	}
+}

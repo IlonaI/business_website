@@ -1,0 +1,53 @@
+// Celarfix
+
+@mixin clearfix() {
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
+// Wrapper
+
+@mixin wrapper() {
+	max-width: 1170px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+
+// Background
+
+@mixin bgImg($url, $position, $width) {
+	background: url($url), $position;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: $width;
+}
+
+
+// Buttons
+
+@mixin btn($width, $height, $bg-color, $border-radius) {
+	width: $width;
+	height: $height;
+	color: $white;
+	text-transform: uppercase;
+	background-color: $bg-color;
+	border: none;
+	border-radius: $border-radius;
+	cursor: pointer;
+	@include basic-transition();
+	&:hover {
+		background-color: darken($bg-color, 10%);
+	}
+}
+
+
+// Transition
+
+@mixin basic-transition() { transition: all 0.4s ease-in-out; }

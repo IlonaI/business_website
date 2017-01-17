@@ -1,0 +1,184 @@
+.portfolio {
+	padding-top: em(100px);
+	text-align: center;
+
+	&__heading {
+		margin-top: 0;
+		margin-bottom: 18px;
+	}
+
+	&__text {
+		max-width: 858px;
+		margin: em(45px) auto em(25px) auto;
+	}
+
+	&__filter { margin-bottom: em(40px); }
+
+	&__item {
+		display: inline-block;
+		margin: em(18px);
+		padding: 7px 12px;
+		font-size: em(14px);
+		font-weight: 700;
+		color: rgb(39,62,78);
+		cursor: pointer;
+		@include basic-transition();
+		&:hover {
+			color: $white;
+			background-color: $danube;
+			border-radius: 3px;
+		}
+	}
+
+	&__link {
+		padding: 7px 12px;
+		font-size: em(14px);
+		font-weight: 700;
+		color: rgb(39,62,78);
+		@include basic-transition();
+		&:hover {
+			color: $white;
+			background-color: $danube;
+			border-radius: 3px;
+
+		}
+	}
+}
+
+
+.gallery {
+	margin-top: em(15px);
+	font-size: 0;    
+	line-height: 0;
+	overflow: hidden;
+
+	&__item {
+		position: relative;
+		display: inline-block;
+		width: 22%;
+		padding-bottom: 17.5%;
+		font-size: 16px;
+		z-index: 2;
+		cursor: pointer;
+		max-heiht: 270px;
+		&:hover .gallery__overlay {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 3;
+		width: 100%;
+		height: 100%;
+		color: $white;
+		background-color: rgba(255,193,85,0.9);
+		opacity: 0;
+		transition: all 0.5s ease;
+		transform: translateY(300px);
+	}
+
+	&__name {
+		margin-top: 20%;
+		font-size: em(16px);
+		&:before {
+			display: block;
+			margin-bottom: 25px;
+			margin-left: 45%;
+			width: 40px;
+			height: 40px;
+			content: url('../img/overlay_icon.png');
+			border: 1px solid $white;
+			border-radius: 50%;
+		}
+		&--small {
+			display: block;
+			margin-top: 10px;
+			font-size: em(13px);
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+
+.js-inactive {
+	width: 0;
+	padding: 0;
+	transform: scale(0);
+	transition: all 0.5s ease-in-out;
+}
+
+
+.js-active {
+	color: $white;
+	background-color: $danube;
+	border-radius: 3px;
+	@include basic-transition();
+}
+
+
+// media queries
+
+@media (max-width: 63.75em) {
+
+	.gallery {
+		&__item {
+			width: 50%;
+			padding-bottom: 40%;
+		}
+
+		&__name {
+			margin-top: 25%;
+			font-size: em(20px);
+
+			&--small { font-size: em(15px); }
+		}
+	}
+
+	.js-inactive {
+		width: 0;
+		padding: 0;
+	}
+}
+
+
+@media (max-width: 40em) {
+
+	.portfolio {
+		&__filter { margin-bottom: em(20px); }
+	}
+
+}
+
+@media (max-width: 34em) {
+
+	.gallery {
+		&__item {
+			width: 100%;
+			padding-bottom: 80%;
+		}
+
+		&__name { 
+			margin-top: 30%;
+			font-size: em(25px);
+
+			&--small { font-size: em(18px); }
+		}
+	}
+
+	.js-inactive {
+		width: 0;
+		padding: 0;
+	}
+}

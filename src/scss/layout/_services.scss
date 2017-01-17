@@ -1,0 +1,57 @@
+.services {
+	padding-top: em(100px);
+	text-align: center;
+
+	&__content {
+		@include clearfix();
+		margin-top: em(90px);
+		text-align: left;
+	}
+
+	&__column {
+		float: left;
+		width: calc(50% - 20px);
+
+		&--margin-right { margin-right: em(40px); }
+	}
+
+	&__item { margin-bottom: em(80px); }
+
+	&__name {
+		position: relative;
+		margin-bottom: em(20px);
+		text-transform: uppercase;
+		color: $limedSpruce;
+	}
+
+	&__icon {
+		float: left;
+		width: 40px;
+		margin-top: em(20px);
+		margin-left: em(30px);
+	}
+
+	&__description {
+		padding-left: em(20px);
+		overflow: hidden;
+	}
+
+	&__paragraph {
+		font-size: em(13px);
+		color: $boulder;
+	}
+}
+
+// media queries
+
+@media (max-width: 48em) {
+
+	.services {
+		&__column {
+			float: none;
+			width: 100%;
+		}
+
+		&__icon { margin-left: 0; }
+	}
+}

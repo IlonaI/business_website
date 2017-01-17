@@ -1,0 +1,61 @@
+.testimonials {
+	@include clearfix() ;
+	padding-top: em(100px);
+	padding-bottom: em(100px);
+	text-align: center;
+	overflow: hidden;
+
+	&__row { margin-top: em(60px); }
+
+	&__item {
+		position: relative;
+		float: left;
+		width: 50%;
+		&:after {
+			position: absolute;
+			bottom: 25px;
+			left: 80px;
+			content: '';
+			width: 0;
+			height: 0;
+			border-top: 20px solid rgb(246,243,243);
+			border-right: 20px solid transparent;
+		}
+	}
+
+	&__quote {
+		padding: 30px;
+		font-size: em(14px);
+		font-style: italic;
+		line-height: 1.2;
+		color: $boulder;	
+		background-color: rgb(246,243,243);
+	}
+
+	&__author {
+		margin-left: 40px;
+		font-size: em(13px);
+		text-align: left;
+		vertical-align: middle;
+		&:before {
+			content: url('../img/author_icon.png');
+			vertical-align: middle;
+		}
+		
+		&--name {
+			margin-left: em(20px);
+			font-weight: 700;
+		}
+	}
+}
+
+// media queries
+
+@media (max-width: 48em) {
+	.testimonials {
+		&__item {
+		float: none;
+		width: 100%;
+		}
+	}
+}
